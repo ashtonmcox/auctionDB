@@ -1,55 +1,57 @@
 ## ITCS 3160-0002, Spring 2024
-## Marco Vieira, marco.vieira@charlotte.edu
+## Ashton Cox, ashtonmcox@outlook.com
 ## University of North Carolina at Charlotte
-
-The code and resources provided are to be used only in the scope of ITCS 3160-0002, Spring 2024.
- 
-The main purpose is to provide examples on how to do the the initial setup of the database-centric REST API that must be developed for the course project.
-In particular, the projects available are totally automated to be easily deployed in third-party setups with the help of a tool (in this case `docker` or maven, depending on the project). 
-
-_This content does not replace the proper reading of the assignment description._
-
 
 ## Overview of the Contents
 
 - [**`PostgreSQL`**](postgresql) - Database ready to run in a `docker` container with or without the help of the `docker-compose` tool;
-- [**`Python`**](python) - Source code of web application template in python for execution  with `docker` container configured. Ready to run in `docker-compose` with PostgreSQL
-  - [`app/`](python/app) folder is mounted to allow developing with container running
 - [**`Java`**](java) - Source code of web application template in java/spark with `docker` container configured. Ready to run in `docker-compose` with PostgreSQL or in your favorite IDE.
 - [**`postman`**](postman) - A collection of requests exported of postman tool;
 
 
-## Requirements
+## Auction Management System Manual
 
+## 1. Introduction
+Welcome to the Auction Management System manual! This system allows users to create, manage, and participate in auctions. It provides RESTful APIs for various functionalities, including user management, auction creation, bidding, messaging, and more.
+
+## 2. Prerequisites
 To execute this project it is required to have installed:
 
 - `docker`
 - `docker-compose`
-- `maven` only if you opt for the [java](java) option
+- `maven`
 
-
-
-## Demo [Python](python) REST API
-
-
-To start this demo with run the script (e.g. [`sh docker-compose-python-psql.sh`](docker-compose-python-psql.sh)) to have both the server and the database running.
-This script uses `docker-compose` and follows the configurations available in [`docker-compose-python-psql.yml`](docker-compose-python-psql.yml)).
-
-The folder [`app`](python/app) is mapped into the container.
-You can modify the contents and the server will update the sources without requiring to rebuild or restart the container.
+## 3. Deployment
+Follow these steps to deploy the Auction Management System:
+Navigate to the project directory
+Run docker script: 
+For Mac: ./docker-compose-up-java-psql.sh
+For Windows: ./docker-compose-up-java-psql.bat
 
 * Web browser access: http://localhost:8080
 
+  
+## 4. Running the Application
+After running the up script, the application will start, and the RESTful APIs will be accessible via HTTP (http://localhost:8080). In order to post or put, use Postman to send the payloads. Postman can also be used for the get methods rather than the HTTP method.
+
+## 5. API Endpoints
 
 
-## Demo [Java](java) REST API
+## 6. Example Usage
+Here are some example use cases for the Auction Management System:
+Creating a User Account: Use the createUser endpoint to create a new user account.
+Logging In: Obtain an access token by logging in using the loginUser endpoint.
+Creating an Auction: Use the create auction endpoint to create a new auction.
+Searching for Auctions: Utilize the search auction endpoint to find relevant auctions.
+Placing a Bid: Bid on an auction using the create bid endpoint.
+Editing an Auction: Edit the details of an auction you created using the edit auction endpoint.
+Viewing Application Statistics: Retrieve statistics about the application to gain insights into user activity.
+Viewing Completed Auctions: Retrieve information about completed auctions to see the results.
+Banning a User: If necessary, ban a user from the system using the ban user endpoint.
 
-To start this demo with run the script (e.g. [`sh docker-compose-java-psql.sh`](docker-compose-java-psql.sh)) to have both the server and the database running.
+## 7. Conclusion
+Congratulations! You have successfully deployed and run the Auction Management System. Refer to this manual for guidance on using the system's functionalities. If you encounter any issues or have questions, please refer to the project documentation or contact the system administrator for assistance.
 
-The demo available here uses [Spring Boot](https://spring.io/projects/spring-boot), which is one of the most widely used solutions to develop REST APIs and micro-services.
-*"Spring Boot makes it easy to create stand-alone, production-grade Spring based Applications that you can "just run."*
-It is very easy to build and automate its deployment either with `maven` or `Docker`.
 
-* Web browser access: http://localhost:8080
 
 
