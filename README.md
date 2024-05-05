@@ -1,33 +1,55 @@
-# auctionDB
-Here's a description for your GitHub posting:
+## ITCS 3160-0002, Spring 2024
+## Marco Vieira, marco.vieira@charlotte.edu
+## University of North Carolina at Charlotte
 
-Project Title: Online Auction System
+The code and resources provided are to be used only in the scope of ITCS 3160-0002, Spring 2024.
+ 
+The main purpose is to provide examples on how to do the the initial setup of the database-centric REST API that must be developed for the course project.
+In particular, the projects available are totally automated to be easily deployed in third-party setups with the help of a tool (in this case `docker` or maven, depending on the project). 
 
-Description:
-This repository contains the solution for the Database Design and Implementation course project, completed during ITCS 3160-002 in Spring 2024. The project focuses on developing a database system for an online auction platform, adhering to industry best practices for software development.
+_This content does not replace the proper reading of the assignment description._
 
-Objectives:
 
-Organized, planned, and executed a database application development initiative, including defining requirements and planning development phases.
-Created Entity-Relationship Diagrams (ERD) to represent high-level data relationships and translated conceptual models into physical database schemas.
-Designed, implemented, tested, and deployed a database application, encompassing overall architecture, relational schema, database interaction code, and deployment in a testing environment.
-Installed, configured, and managed a PostgreSQL relational DBMS, including routine tasks such as creating databases, users, backups, restores, and security configurations.
-Coded client and server-side in SQL and PL/pgSQL, including writing SQL queries, stored procedures, functions, and triggers to automate database actions.
-Quality Attributes:
+## Overview of the Contents
 
-Ensured logical and physical design integrity, maintaining a well-organized and normalized database schema.
-Utilized PostgreSQL as a robust transactional DBMS to ensure ACID properties and data integrity.
-Implemented a REST API-based application architecture for seamless communication between components.
-Leveraged SQL and PL/pgSQL for efficient and reusable database functions.
-Managed transactions and concurrency effectively, including isolation levels and handling of concurrent transactions.
-Developed error avoidance and detection mechanisms through input validation, referential integrity, and comprehensive error logging.
-Provided thorough documentation for the database schema and application, facilitating understanding and maintenance.
-Functional Description:
-The system enables users to initiate, participate in, and manage auctions through a REST API, supporting functionalities such as user authentication, auction creation, bidding, messaging, and auction management.
+- [**`PostgreSQL`**](postgresql) - Database ready to run in a `docker` container with or without the help of the `docker-compose` tool;
+- [**`Python`**](python) - Source code of web application template in python for execution  with `docker` container configured. Ready to run in `docker-compose` with PostgreSQL
+  - [`app/`](python/app) folder is mounted to allow developing with container running
+- [**`Java`**](java) - Source code of web application template in java/spark with `docker` container configured. Ready to run in `docker-compose` with PostgreSQL or in your favorite IDE.
+- [**`postman`**](postman) - A collection of requests exported of postman tool;
 
-Milestones and Deadlines:
 
-Group Definition: March 1st, 11:59 pm
-E-R Diagram, Relations, and SQL Submission: March 14th, 11:59 pm
-Final Delivery: April 26th, 11:59 pm
-For detailed documentation, source code, and project artifacts, please refer to the respective folders in this repository.
+## Requirements
+
+To execute this project it is required to have installed:
+
+- `docker`
+- `docker-compose`
+- `maven` only if you opt for the [java](java) option
+
+
+
+## Demo [Python](python) REST API
+
+
+To start this demo with run the script (e.g. [`sh docker-compose-python-psql.sh`](docker-compose-python-psql.sh)) to have both the server and the database running.
+This script uses `docker-compose` and follows the configurations available in [`docker-compose-python-psql.yml`](docker-compose-python-psql.yml)).
+
+The folder [`app`](python/app) is mapped into the container.
+You can modify the contents and the server will update the sources without requiring to rebuild or restart the container.
+
+* Web browser access: http://localhost:8080
+
+
+
+## Demo [Java](java) REST API
+
+To start this demo with run the script (e.g. [`sh docker-compose-java-psql.sh`](docker-compose-java-psql.sh)) to have both the server and the database running.
+
+The demo available here uses [Spring Boot](https://spring.io/projects/spring-boot), which is one of the most widely used solutions to develop REST APIs and micro-services.
+*"Spring Boot makes it easy to create stand-alone, production-grade Spring based Applications that you can "just run."*
+It is very easy to build and automate its deployment either with `maven` or `Docker`.
+
+* Web browser access: http://localhost:8080
+
+
