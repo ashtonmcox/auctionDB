@@ -1,6 +1,6 @@
 # 
 # ITCS 3160-0002, Spring 2024
-# Marco Vieira, marco.vieira@charlotte.edu
+# Ashton Cox, ashtonmcox@outlook.com
 # University of North Carolina at Charlotte
 
 FROM maven:3-jdk-11-slim
