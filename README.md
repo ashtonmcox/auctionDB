@@ -1,12 +1,18 @@
+
 ## ITCS 3160-0002, Spring 2024
 ## Ashton Cox, ashtonmcox@outlook.com
+## Andy Pham, apham21@uncc.edu
+## Connor Schwab, cschwab3@uncc.edu
+## David Saldivar, dsaldiva@uncc.edu
+## Jamison Heinrich, jheinri2@uncc.edu
 ## University of North Carolina at Charlotte
+
 
 ## Overview of the Contents
 
-- [**`PostgreSQL`**](postgresql) - Database ready to run in a `docker` container with or without the help of the `docker-compose` tool;
-- [**`Java`**](java) - Source code of web application template in java/spark with `docker` container configured. Ready to run in `docker-compose` with PostgreSQL or in your favorite IDE.
-- [**`postman`**](postman) - A collection of requests exported of postman tool;
+- [####`PostgreSQL`####](postgresql) - Database ready to run in a `docker` container with or without the help of the `docker-compose` tool;
+- [####`Java`####](java) - Source code of web application template in java/spark with `docker` container configured. Ready to run in `docker-compose` with PostgreSQL or in your favorite IDE.
+- [####`postman`####](postman) - A collection of requests exported of postman tool;
 
 
 ## Auction Management System Manual
@@ -28,7 +34,7 @@ Run docker script:
 For Mac: ./docker-compose-up-java-psql.sh
 For Windows: ./docker-compose-up-java-psql.bat
 
-* Web browser access: http://localhost:8080
+## Web browser access: http://localhost:8080
 
   
 ## 4. Running the Application
