@@ -1,4 +1,3 @@
--- Replace this by the SQL code needed to create your database
 
 CREATE TABLE users (
 	username VARCHAR(512) NOT NULL,
