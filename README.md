@@ -35,7 +35,9 @@ For Windows: ./docker-compose-up-java-psql.bat
 After running the up script, the application will start, and the RESTful APIs will be accessible via HTTP (http://localhost:8080). In order to post or put, use Postman to send the payloads. Postman can also be used for the get methods rather than the HTTP method.
 
 ## 5. API Endpoints
+The system offers the following API endpoints for various functionalities:
 
+https://github.com/ashtonmcox/auctionDB/blob/main/API_Endpoints
 
 ## 6. Example Usage
 Here are some example use cases for the Auction Management System:
