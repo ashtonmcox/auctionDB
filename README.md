@@ -47,15 +47,15 @@ https://github.com/ashtonmcox/auctionDB/blob/main/API_Endpoints
 
 ## 6. Example Usage
 Here are some example use cases for the Auction Management System:
-Creating a User Account: Use the createUser endpoint to create a new user account.
-Logging In: Obtain an access token by logging in using the loginUser endpoint.
-Creating an Auction: Use the create auction endpoint to create a new auction.
-Searching for Auctions: Utilize the search auction endpoint to find relevant auctions.
-Placing a Bid: Bid on an auction using the create bid endpoint.
-Editing an Auction: Edit the details of an auction you created using the edit auction endpoint.
-Viewing Application Statistics: Retrieve statistics about the application to gain insights into user activity.
-Viewing Completed Auctions: Retrieve information about completed auctions to see the results.
-Banning a User: If necessary, ban a user from the system using the ban user endpoint.
+  Creating a User Account: Use the createUser endpoint to create a new user account.
+  Logging In: Obtain an access token by logging in using the loginUser endpoint.
+  Creating an Auction: Use the create auction endpoint to create a new auction.
+  Searching for Auctions: Utilize the search auction endpoint to find relevant auctions.
+  Placing a Bid: Bid on an auction using the create bid endpoint.
+  Editing an Auction: Edit the details of an auction you created using the edit auction endpoint.
+  Viewing Application Statistics: Retrieve statistics about the application to gain insights into user activity.
+  Viewing Completed Auctions: Retrieve information about completed auctions to see the results.
+  Banning a User: If necessary, ban a user from the system using the ban user endpoint.
 
 ## 7. Conclusion
 Congratulations! You have successfully deployed and run the Auction Management System. Refer to this manual for guidance on using the system's functionalities. If you encounter any issues or have questions, please refer to the project documentation or contact the system administrator for assistance.
