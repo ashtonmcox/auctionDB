@@ -1,84 +1,97 @@
-/** 
-* ITCS 3160-0002, Spring 2024
-* Ashton Cox, ashtonmcox@outlook.com
-* Andy Pham, apham21@uncc.edu
-* Connor Schwab, cschwab3@uncc.edu
-* David Saldivar, dsaldiva@uncc.edu
-* Jamison Heinrich, jheinri2@uncc.edu
-* University of North Carolina at Charlotte
- */
+ 
+# ITCS 3160-0002, Spring 2024
+# Ashton Cox, ashtonmcox@outlook.com
+# Andy Pham, apham21@uncc.edu
+# Connor Schwab, cschwab3@uncc.edu
+# David Saldivar, dsaldiva@uncc.edu
+# Jamison Heinrich, jheinri2@uncc.edu
+# University of North Carolina at Charlotte
+ 
 
-User Creation: POST /users/createUser
-Payload:
-username: The username of the new user (string).
-password: The password for the new user (string).
-name: The name of the new user (string).
-phone: The phone number of the new user (integer).
-address: The address of the new user (string).
-banned: Whether or not the user has been banned (boolean).
-Header Required: None
-User Login: POST /tokens/loginUser
-Payload:
-username: The username of the user (string).
-password: The password for the user (string).
-Header Required: None
-Create Auction: POST /auction/create
-Payload:
-title: The title of the auction (string).
-description: The description of the item being sold (string).
-startTime: The start time of the auction (timestamp).
-endTime: The end time of the auction (timestamp).
-minimimPrice: The starting bid amount for the auction (double).
-condition: The condition of the item (string).
-seller: The seller of the item (string).
-status: Where the auction is currently open (boolean).
-Header Required: x-access-tokens (Token for authentication)
-Search Auction: GET /auction/search?q={param}
-Payload: (Query Parameters)
-No payload required. Use the param in the URL path to search auctions: Keywords, or auction id.
-Header Required: x-access-tokens (Token for authentication)
-Get Auction Details: GET /auction/{auctionId}
-Payload:
-No payload required. Use the auction ID in the URL path to retrieve details about a specific auction.
-Header Required: x-access-tokens (Token for authentication)
-Get User Auctions: GET /auctions/{username}
-Payload:
-No payload required. Use the username in the URL path to retrieve auctions created by a specific user.
-Header Required: x-access-tokens (Token for authentication)
-Create Bid: POST /auction/{auctionId}/bid
-Payload:
-amount: The bid amount (double).
-username: User placing bid (string).
-auction_id: ID of the auction on which the bid is being placed (int).
-valid: Whether or not the bid is valid, based on whether the user has been banned (boolean).
-Header Required: x-access-tokens (Token for authentication)
-Edit Auction: PUT /auction/{auctionId}/edit
-Payload:
-title: Updated title of the auction (string).
-Use the auctionId in the path to specify the auction to edit.
-Header Required: x-access-tokens (Token for authentication)
-Create Message: POST /auction/{auctionId}/message
-Payload:
-comment: The content of the message (string).
-users_username: username of the person commenting (string).
-Header Required: x-access-tokens (Token for authentication)
-Close Auction: PUT /auction/{auctionId}/close
-Payload:
-No payload required. Use the auction ID in the URL path to close the specified auction.
-Header Required: x-access-tokens (Token for authentication)
-Cancel Auction: PUT /auction/{auctionId}/cancel
-Payload:
-No payload required. Use the auction ID in the URL path to cancel the specified auction.
-Header Required: x-access-tokens (Token for authentication)
-Ban User: PUT /users/{username}/ban
-Payload:
-No payload required. Use the username in the URL path to ban the specified user.
-Header Required: x-access-tokens (Token for authentication). Only accessible by an admin user.
-Get Application Statistics: GET /statistics
-Payload:
-No payload required. This endpoint retrieves application statistics.
-Header Required: x-access-tokens (Token for authentication). Only accessible by an admin user.
-Get Completed Auctions: GET /auctions/completed
-Payload:
-No payload required. This endpoint retrieves information about completed auctions.
-Header Required: x-access-tokens (Token for authentication)
+## User Creation: POST /users/createUser
+  Payload:
+    username: The username of the new user (string).
+    password: The password for the new user (string).
+    name: The name of the new user (string).
+    phone: The phone number of the new user (integer).
+    address: The address of the new user (string).
+    banned: Whether or not the user has been banned (boolean).
+  Header Required: None
+
+## User Login: POST /tokens/loginUser
+  Payload:
+    username: The username of the user (string).
+    password: The password for the user (string).
+  Header Required: None
+
+## Create Auction: POST /auction/create
+  Payload:
+    title: The title of the auction (string).
+    description: The description of the item being sold (string).
+    startTime: The start time of the auction (timestamp).
+    endTime: The end time of the auction (timestamp).
+    minimimPrice: The starting bid amount for the auction (double).
+    condition: The condition of the item (string).
+    seller: The seller of the item (string).
+    status: Where the auction is currently open (boolean).
+  Header Required: x-access-tokens (Token for authentication)
+
+## Search Auction: GET /auction/search?q={param}
+  Payload: (Query Parameters)
+    No payload required. Use the param in the URL path to search auctions: Keywords, or auction id.
+  Header Required: x-access-tokens (Token for authentication)
+
+## Get Auction Details: GET /auction/{auctionId}
+  Payload:
+    No payload required. Use the auction ID in the URL path to retrieve details about a specific auction.
+  Header Required: x-access-tokens (Token for authentication)
+
+## Get User Auctions: GET /auctions/{username}
+  Payload:
+    No payload required. Use the username in the URL path to retrieve auctions created by a specific user.
+  Header Required: x-access-tokens (Token for authentication)
+
+## Create Bid: POST /auction/{auctionId}/bid
+  Payload:
+    amount: The bid amount (double).
+    username: User placing bid (string).
+    auction_id: ID of the auction on which the bid is being placed (int).
+    valid: Whether or not the bid is valid, based on whether the user has been banned (boolean).
+  Header Required: x-access-tokens (Token for authentication)
+
+## Edit Auction: PUT /auction/{auctionId}/edit
+  Payload:
+    title: Updated title of the auction (string).
+    Use the auctionId in the path to specify the auction to edit.
+  Header Required: x-access-tokens (Token for authentication)
+
+## Create Message: POST /auction/{auctionId}/message
+  Payload:
+    comment: The content of the message (string).
+    users_username: username of the person commenting (string).
+  Header Required: x-access-tokens (Token for authentication)
+
+## Close Auction: PUT /auction/{auctionId}/close
+  Payload:
+    No payload required. Use the auction ID in the URL path to close the specified auction.
+  Header Required: x-access-tokens (Token for authentication)
+
+## Cancel Auction: PUT /auction/{auctionId}/cancel
+  Payload:
+    No payload required. Use the auction ID in the URL path to cancel the specified auction.
+  Header Required: x-access-tokens (Token for authentication)
+
+## Ban User: PUT /users/{username}/ban
+  Payload:
+    No payload required. Use the username in the URL path to ban the specified user.
+  Header Required: x-access-tokens (Token for authentication). Only accessible by an admin user.
+
+## Get Application Statistics: GET /statistics
+  Payload:
+    No payload required. This endpoint retrieves application statistics.
+  Header Required: x-access-tokens (Token for authentication). Only accessible by an admin user.
+
+## Get Completed Auctions: GET /auctions/completed
+  Payload:
+    No payload required. This endpoint retrieves information about completed auctions.
+  Header Required: x-access-tokens (Token for authentication)
