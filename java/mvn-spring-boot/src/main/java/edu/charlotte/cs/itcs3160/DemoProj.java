@@ -7,9 +7,6 @@
 * Jamison Heinrich, jheinri2@uncc.edu
 * University of North Carolina at Charlotte
 
-* IMPORTANT: this file includes the Python implementation of the REST API
-* It is in this file that yiu should implement the functionalities/transactions   
-*/
 package edu.charlotte.cs.itcs3160;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
